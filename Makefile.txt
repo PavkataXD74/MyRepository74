@@ -1,0 +1,20 @@
+
+all: safeAdd.out safeSubtract.out safeMultiply.out safeDivide.out safeStrToInt.out
+
+safeint.o: safeint.c safint.h
+gcc -c safeint.c -o safint.o
+
+safeAdd.out:
+gcc safeAdd.c safeint.o -o safeint.out
+
+safeSubtract.out:
+gcc safeSubtract.c safeint.o -o safeSubtract.out
+
+safeMultiply.out:
+gcc safeMultiply.c safeint.o -o safeMultiply.out
+
+safeDivide.out:
+gcc safeDivide.c safeint.o -o safeDivide.out
+
+clear:
+rm -f *.o *.out
